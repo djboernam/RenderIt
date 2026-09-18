@@ -1,0 +1,29 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "windows-release",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build/windows",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Release",
+        "RENDERIT_ENABLE_OPENEXR": "ON",
+        "RENDERIT_BUILD_STANDALONE": "ON",
+        "RENDERIT_ENABLE_SKETCHUP": "OFF"
+      }
+    },
+    {
+      "name": "linux-release",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/linux",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "RENDERIT_ENABLE_OPENEXR": "ON",
+        "RENDERIT_BUILD_STANDALONE": "ON",
+        "RENDERIT_ENABLE_SKETCHUP": "OFF"
+      }
+    }
+  ]
+}
